@@ -133,3 +133,46 @@ class GCECache < GCPBaseCache
     @@cached_gce_instances
   end
 end
+
+# Cache for Cloud SQL Instances.
+#
+class CloudSQLCache < GCPBaseCache
+  name 'CloudSQLCache'
+  desc 'The Cloud SQL cache resource contains functions consumed by
+       the CIS/PCI Google profiles:
+       https://github.com/GoogleCloudPlatform/inspec-gcp-cis-benchmark'
+
+  @@cached_sql_instance_names = []
+  @@cached_sql_instance_objects = {}
+  @@cache_set = false
+
+  def initialize(project: '')
+    @gcp_project_id = project
+  end
+
+  def sql_cache_instance_names
+    set_sql_cache unless cache_set?
+    @@cached_sql_instance_names
+  end
+
+  def sql_cache_instance_objects
+    set_sql_cache unless cache_set?
+    @@cached_sql_instance_objects
+  end
+
+  def cache_set?
+    @@cache_set
+  end
+
+  private
+
+  def set_sql_cache
+    @@cached_sql_instance_names = []
+    @@cached_sql_instance_objects = {}
+    inspec.google_sql_database_instances(project: @gcp_project_id).instance_names.each do |instance_name|
+      @@cached_sql_instance_names.push(instance_name)
+      @@cached_sql_instance_objects[instance_name] = inspec.google_sql_database_instance(project: @gcp_project_id, database: instance_name)
+    end
+    @@cache_set = true
+  end
+end
