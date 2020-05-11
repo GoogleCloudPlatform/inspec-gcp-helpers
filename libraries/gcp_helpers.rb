@@ -150,12 +150,12 @@ class CloudSQLCache < GCPBaseCache
     @gcp_project_id = project
   end
 
-  def sql_cache_instance_names
+  def instance_names
     set_sql_cache unless cache_set?
     @@cached_sql_instance_names
   end
 
-  def sql_cache_instance_objects
+  def instance_objects
     set_sql_cache unless cache_set?
     @@cached_sql_instance_objects
   end
