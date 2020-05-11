@@ -23,6 +23,6 @@ license: Apache-2.0
 inspec_version: '>= 4.7.3' 
 depends:
 - name: inspec-gcp
-  url: https://github.com/inspec/inspec-gcp/archive/master.tar.gz
+  url: https://github.com/inspec/inspec-gcp/archive/v1.5.0.tar.gz
 supports:
 - platform: gcp
