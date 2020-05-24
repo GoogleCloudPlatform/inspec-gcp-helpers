@@ -15,7 +15,6 @@
 timeout: 300s
 steps:
 - id: 'Rubocop'
-  waitFor: ['Build Docker container']
   name: ruby:2.7.1
   entrypoint: '/bin/sh'
   args: 
