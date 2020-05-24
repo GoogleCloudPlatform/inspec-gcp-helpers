@@ -1,0 +1,30 @@
+---
+AllCops:
+  TargetRubyVersion: 2.6.3p62
+  Exclude:
+  - Gemfile
+
+Layout/LineLength:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: true
+  Regex: !ruby/regexp '/^.{3,100}$/'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/IdenticalConditionalBranches:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
