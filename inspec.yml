@@ -18,11 +18,11 @@ maintainer:
 summary: This resource pack provides helpers for the Google Cloud Platform Inspec profiles.
 copyright: Google
 copyright_email: copyright@google.com
-version: 1.0.5
+version: 1.0.6
 license: Apache-2.0
 inspec_version: '>= 4.7.3' 
 depends:
 - name: inspec-gcp
-  url: https://github.com/inspec/inspec-gcp/archive/v1.5.0.tar.gz
+  url: https://github.com/modular-magician/inspec-gcp/archive/memcache-updates.tar.gz
 supports:
 - platform: gcp
