@@ -29,6 +29,7 @@ class IAMBindingsCache < GCPBaseCache
   @@iam_binding_roles_cache_set = false
 
   def initialize(project: '')
+    super()
     @gcp_project_id = project
   end
 

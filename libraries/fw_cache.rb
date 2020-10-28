@@ -38,6 +38,7 @@ class FirewallCache < GCPBaseCache
   @@firewall_objects_cache_set = false
 
   def initialize(project: '')
+    super()
     @gcp_project_id = project
   end
 

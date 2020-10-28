@@ -24,6 +24,7 @@ class GCPBaseCache < Inspec.resource(1)
   attr_reader :gke_locations
 
   def initialize(project: '')
+    super()
     @gcp_project_id = project
     @gke_locations = []
   end
