@@ -29,6 +29,7 @@ class ServiceAccountCache < GCPBaseCache
   @@sa_keys_cache_set = false
 
   def initialize(project: '')
+    super()
     @gcp_project_id = project
   end
 

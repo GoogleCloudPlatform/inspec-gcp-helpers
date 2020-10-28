@@ -31,6 +31,7 @@ class KMSKeyCache < GCPBaseCache
   @kms_locations = []
 
   def initialize(project: '', locations: [])
+    super()
     @gcp_project_id = project
     @kms_locations = locations
   end

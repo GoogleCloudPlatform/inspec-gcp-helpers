@@ -28,6 +28,7 @@ class GKECache < GCPBaseCache
   @@gke_clusters_cached = false
 
   def initialize(project: '', gke_locations: [])
+    super()
     @gcp_project_id = project
     @gke_locations = if gke_locations.join.empty?
                        all_gcp_locations

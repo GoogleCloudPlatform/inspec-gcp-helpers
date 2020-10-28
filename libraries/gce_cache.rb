@@ -28,6 +28,7 @@ class GCECache < GCPBaseCache
   @@gce_instances_cached = false
 
   def initialize(project: '', gce_zones: [])
+    super()
     @gcp_project_id = project
     @gce_zones = if gce_zones.join.empty?
                    inspec.google_compute_zones(project: @gcp_project_id)
